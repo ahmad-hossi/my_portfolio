@@ -2,7 +2,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:marqueer/marqueer.dart';
 import 'package:my_portfolio/constant.dart';
+import 'package:my_portfolio/skill_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'header.dart';
@@ -100,16 +102,15 @@ class MyHomePage extends StatelessWidget {
                             SizedBox(
                               width: 500.w,
                               child: Text(
-                                "Mobile Software Engineer with deep understanding in"
-                                " Flutter, Dart and Firebase with 3 years experience"
-                                ".\nEvery day is a new build, So let's start your own",
-                                style: GoogleFonts.abel(
-                                  textStyle : const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                )
-                              ),
+                                  "Mobile Software Engineer with deep understanding in"
+                                  " Flutter, Dart and Firebase with 3 years experience"
+                                  ".\nEvery day is a new build, So let's start your own",
+                                  style: GoogleFonts.abel(
+                                    textStyle: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  )),
                             ),
                             60.verticalSpace,
                             Row(
@@ -144,7 +145,7 @@ class MyHomePage extends StatelessWidget {
                                   child: ElevatedButton(
                                       onPressed: () async {
                                         await launchUrl(Uri.https(
-                                            "calendly.com","/d/cp44-pjf-zs4"));
+                                            "calendly.com", "/d/cp44-pjf-zs4"));
                                       },
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(
@@ -173,6 +174,56 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  40.verticalSpace,
+                  SizedBox(
+                    height: 100,
+                    child: Marqueer(
+                      interaction: false,
+                      pps: 32,
+                      direction: MarqueerDirection.ltr,
+                      restartAfterInteractionDuration:
+                          const Duration(seconds: 3),
+                      child: const Row(
+                        children: [
+                          SkillCard(
+                            imagePath: 'assets/images/git.png',
+                            skillName: 'Git',
+                          ),
+                          SkillCard(
+                            imagePath: 'assets/images/flutter.png',
+                            skillName: 'Flutter',
+                          ),
+                          SkillCard(
+                            imagePath: 'assets/images/dart.png',
+                            skillName: 'Dart',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                    child: Marqueer(
+                      interaction: false,
+                      pps: 31,
+                      direction: MarqueerDirection.rtl,
+                      restartAfterInteractionDuration:
+                          const Duration(seconds: 3),
+                      child: const Row(
+                        children: [
+                          SkillCard(
+                            imagePath: "assets/images/python.png",
+                            skillName: 'Python',
+                          ),
+                          SkillCard(
+                            imagePath: "assets/images/figma.png",
+                            skillName: 'Figma',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  40.verticalSpace,
                 ],
               ),
             ),
