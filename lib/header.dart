@@ -15,8 +15,7 @@ class Header extends StatelessWidget {
   final void Function() onHeaderMenuTap;
   final ValueNotifier<int> selectedSectionIndex;
 
-
-  void _sendEmail(){
+  void _sendEmail() {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: 'ahmad.hessi.96@gmail.com',
@@ -35,13 +34,31 @@ class Header extends StatelessWidget {
     'Contact me',
   ];
 
-  final List<String> contactIcons = [
-    "assets/icons/email.svg",
-    "assets/icons/linked-in.svg",
-    "assets/icons/calender.svg",
-    "assets/icons/github.svg",
-    "assets/icons/x.svg",
-    "assets/icons/medium.svg"
+  final List<Map<String, String>> contactIcons = [
+    {
+      "icon": "assets/icons/email.svg",
+      "url": "mailto:ahmad.hessi.96@gmail.com"
+    },
+    {
+      "icon": "assets/icons/linked-in.svg",
+      "url": "https://linkedin.com/in/ahmad-hossi",
+    },
+    {
+      "icon": "assets/icons/calender.svg",
+      "url": "https://calendly.com/d/cp44-pjf-zs4",
+    },
+    {
+      "icon": "assets/icons/github.svg",
+      "url": "https://github.com/ahmad-hossi",
+    },
+    {
+      "icon": "assets/icons/x.svg",
+      "url": "https://twitter.com/AHMED_HOSSI",
+    },
+    {
+      "icon": "assets/icons/medium.svg",
+      "url": "https://medium.com/@ahmad.hossi",
+    },
   ];
 
   @override
@@ -111,19 +128,26 @@ class Header extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(flex: 3,),
+            const Spacer(
+              flex: 3,
+            ),
             ...List.generate(
               contactIcons.length,
-              (index) => Container(
-                width: 32,
-                height: 32,
-                decoration: const BoxDecoration(
-                  color: Colors.lightBlue,
-                  shape: BoxShape.circle,
+              (index) => InkWell(
+                onTap: () async {
+                  await launchUrl(Uri.parse(contactIcons[index]["url"]!));
+                },
+                child: Container(
+                  width: 32,
+                  height: 32,
+                  decoration: const BoxDecoration(
+                    color: Colors.lightBlue,
+                    shape: BoxShape.circle,
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  margin: const EdgeInsets.all(4.0),
+                  child: SvgPicture.asset(contactIcons[index]["icon"]!),
                 ),
-                padding: const EdgeInsets.all(8.0),
-                margin: const EdgeInsets.all(4.0),
-                child: SvgPicture.asset(contactIcons[index]),
               ),
             ),
             const Spacer(),

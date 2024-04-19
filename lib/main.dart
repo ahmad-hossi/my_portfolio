@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(1280, 720),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Ahmad Al-Hossi',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
           useMaterial3: true,
@@ -102,9 +102,9 @@ class MyHomePage extends StatelessWidget {
                               child: Text(
                                 "Mobile Software Engineer with deep understanding in"
                                 " Flutter, Dart and Firebase with 3 years experience"
-                                ".\nEveryday is a new build, So let's start your own",
+                                ".\nEvery day is a new build, So let's start your own",
                                 style: GoogleFonts.abel(
-                                  textStyle : TextStyle(
+                                  textStyle : const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                   ),
