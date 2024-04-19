@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Header extends StatelessWidget {
@@ -82,16 +83,18 @@ class Header extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Row(
+           Row(
             children: [
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(
-                'somthing',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                ),
+                'Ahmad Al-Hossi',
+                style: GoogleFonts.afacad(
+                  textStyle : const TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),
+                )
               ),
             ],
           ),
