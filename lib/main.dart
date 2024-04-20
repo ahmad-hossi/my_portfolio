@@ -59,6 +59,7 @@ class MyHomePage extends StatelessWidget {
                     children: [
                       const SizedBox(width: 100),
                       Expanded(
+                        flex: 6,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -167,6 +168,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                       Expanded(
+                        flex: 5,
                         child: Image.asset(
                           'assets/images/profile.png',
                           fit: BoxFit.contain,
@@ -197,6 +199,22 @@ class MyHomePage extends StatelessWidget {
                             imagePath: 'assets/images/dart.png',
                             skillName: 'Dart',
                           ),
+                          SkillCard(
+                            imagePath: 'assets/images/firebase.png',
+                            skillName: 'Firebase',
+                          ),
+                          SkillCard(
+                            imagePath: 'assets/images/flutter flow.png',
+                            skillName: 'Flutter flow',
+                          ),
+                          SkillCard(
+                            imagePath: 'assets/images/supabase.png',
+                            skillName: 'Supabase',
+                          ),
+                          SkillCard(
+                            imagePath: 'assets/images/codemagic.png',
+                            skillName: 'Codemagic',
+                          ),
                         ],
                       ),
                     ),
@@ -212,12 +230,16 @@ class MyHomePage extends StatelessWidget {
                       child: const Row(
                         children: [
                           SkillCard(
-                            imagePath: "assets/images/python.png",
-                            skillName: 'Python',
+                            imagePath: "assets/images/getx.png",
+                            skillName: 'GetX',
                           ),
                           SkillCard(
-                            imagePath: "assets/images/figma.png",
-                            skillName: 'Figma',
+                            imagePath: "assets/images/bloc.png",
+                            skillName: 'Bloc',
+                          ),
+                          SkillCard(
+                            imagePath: "assets/images/dart.png",
+                            skillName: 'Get_it',
                           ),
                         ],
                       ),
